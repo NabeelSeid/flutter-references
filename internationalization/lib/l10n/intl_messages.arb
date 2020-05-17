@@ -1,0 +1,13 @@
+{
+  "@@last_modified": "2020-05-17T22:59:07.067544",
+  "title": "Internationalization",
+  "@title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bodyText": "Hello World",
+  "@bodyText": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
