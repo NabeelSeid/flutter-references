@@ -30,9 +30,15 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: ListView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Implicit Widgets'),
+            SizedBox(height: 16.0),
+            Text(
+              'Implicit Widgets',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            SizedBox(height: 16.0),
             ListTile(
               onTap: () =>
                   Navigator.pushNamed(context, RouteNames.i_animated_opacity),
@@ -40,9 +46,24 @@ class MyHomePage extends StatelessWidget {
               subtitle: Text(
                   'An implicit widget that animate opacity of a child widget'),
             ),
+            menuTile(RouteNames.i_animated_container,
+                title: 'AnimatedContainer'),
           ],
         ),
       ),
     );
   }
+
+  Widget menuTile(
+    String routeName, {
+    String title,
+    String subtitle,
+  }) =>
+      Builder(
+        builder: (c) => ListTile(
+          onTap: () => Navigator.pushNamed(c, routeName),
+          title: Text(title ?? 'Animation'),
+          subtitle: Text(subtitle ?? ''),
+        ),
+      );
 }
