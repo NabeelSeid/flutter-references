@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class IAnimatedContainer extends StatefulWidget {
@@ -42,12 +44,14 @@ class _IAnimatedContainerState extends State<IAnimatedContainer> {
             MaterialButton(
               color: Colors.greenAccent,
               onPressed: () => setState(() {
-                radius = (radius - 16.0).abs();
-                margin = (margin - 16.0).abs();
-                color = color == Colors.cyanAccent
-                    ? Colors.cyan
-                    : Colors.cyanAccent;
-                width = width == 128 ? 300 : 128;
+                double rand = Random().nextDouble();
+                radius = rand * 64; //(radius - 16.0).abs();
+                margin = rand * 64; //(margin - 16.0).abs();
+                color = Color.lerp(Colors.cyan, Colors.pink, rand);
+                // color == Colors.cyanAccent
+                // ? Colors.cyan
+                // : Colors.cyanAccent;
+                width = rand * 300; //width == 128 ? 300 : 128;
               }),
               child: Text('Animate Container'),
             ),
