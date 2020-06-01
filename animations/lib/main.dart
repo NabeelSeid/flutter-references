@@ -39,15 +39,25 @@ class MyHomePage extends StatelessWidget {
               style: Theme.of(context).textTheme.headline6,
             ),
             SizedBox(height: 16.0),
-            ListTile(
-              onTap: () =>
-                  Navigator.pushNamed(context, RouteNames.i_animated_opacity),
-              title: Text('AnimatedOpacity'),
-              subtitle: Text(
-                  'An implicit widget that animate opacity of a child widget'),
+            menuTile(
+              RouteNames.i_animated_opacity,
+              title: 'AnimatedOpacity',
+              subtitle:
+                  'An implicit widget that animate opacity of a child widget',
             ),
             menuTile(RouteNames.i_animated_container,
                 title: 'AnimatedContainer'),
+            // -------------------------
+            // CUSTOM EXPLICIT ANIMATION
+            // -------------------------
+            SizedBox(height: 16.0),
+            Text(
+              'Custom Explicit Animation',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            SizedBox(height: 16.0),
+            menuTile(RouteNames.c_e_fade_scale_transition,
+                title: 'FadeScaleTranstion'),
           ],
         ),
       ),

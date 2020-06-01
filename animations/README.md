@@ -9,6 +9,8 @@ Flutter code based animation are clasiffied into two
 
 ### Explicit Animations
 
+- To create custom Explicit animation use `AnimatedWidget` or `AnimatedBuilder`. They encapsulate the common pattern of calling setState everytime the animation's value changes.
+
 ## Implemented
 
 ---
@@ -19,3 +21,7 @@ Flutter code based animation are clasiffied into two
 [AnimatedContainer](https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html) &nbsp;&nbsp;
 
 ### Explicit Animations
+
+### Custom Explicit Animations
+
+`FadeScaleTranstion` : FadeTranstion and ScaleTranstion together.    
