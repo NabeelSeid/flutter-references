@@ -47,6 +47,19 @@ class MyHomePage extends StatelessWidget {
             ),
             menuTile(RouteNames.i_animated_container,
                 title: 'AnimatedContainer'),
+
+            // -------------------------
+            // EXPLICIT ANIMATION
+            // -------------------------
+            SizedBox(height: 16.0),
+            Text(
+              'Explicit Animation',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            SizedBox(height: 16.0),
+            menuTile(RouteNames.e_decoratedBox_transition,
+                title: 'DecoratedBoxTransition'),
+
             // -------------------------
             // CUSTOM EXPLICIT ANIMATION
             // -------------------------
