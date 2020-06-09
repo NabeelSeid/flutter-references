@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:animations/home.dart';
+import 'package:animations/hero_animation.dart';
 import 'package:animations/implicit_animations/implicit_animations.dart';
 import 'package:animations/explicit_animations/explicit_animations.dart';
 import 'package:animations/custom_explicit_animation/custom_explicit_animation.dart';
@@ -8,7 +9,11 @@ import 'package:animations/custom_explicit_animation/custom_explicit_animation.d
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   final String routeName = settings.name;
 
-  //_____________________Implicit Animation______________________________
+  //__________________________Hero Animation______________________________
+  if (routeName == RouteNames.h_animation)
+    return materialPageRoute(HeroAnimation());
+
+  //__________________________Implicit Animation______________________________
   // AnimatedOpacity
   if (routeName == RouteNames.i_animated_opacity)
     return materialPageRoute(IAnimatedOpacity());
@@ -33,6 +38,9 @@ MaterialPageRoute materialPageRoute(Widget screen) =>
     MaterialPageRoute(builder: (_) => screen);
 
 class RouteNames {
+  // Hero Animations
+  static const String h_animation = '/h_animation';
+
   // Implicit Animations
   static const String i_animated_opacity = '/i_animated_opacity';
   static const String i_animated_container = '/i_animated_container';

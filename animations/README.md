@@ -12,6 +12,10 @@ Flutter code based animation are clasiffied into two
 - Animations that are user controller via `AnimationController`. `AnimationController` exposes animation status and controllers(forward, reverse, animateTo, stop, repeat and fling) that enables for repeating and discontinous effects. It is also possible to control more than one animation with only one animationController
 - To create custom Explicit animation use `AnimatedWidget` or `AnimatedBuilder`. They encapsulate the common pattern of calling setState everytime the animation's value changes.
 
+### Hero Animations
+
+- Transition animation between screens. Not much digged here. To make animation smooth wrap child of Hero with a transparent Material widget
+
 ## Implemented
 
 ---
