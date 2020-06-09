@@ -1,6 +1,6 @@
-import 'package:animations/main.dart';
 import 'package:flutter/material.dart';
 
+import 'package:animations/home.dart';
 import 'package:animations/implicit_animations/implicit_animations.dart';
 import 'package:animations/explicit_animations/explicit_animations.dart';
 import 'package:animations/custom_explicit_animation/custom_explicit_animation.dart';
@@ -26,7 +26,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return materialPageRoute(FadeScaleTransitionWidget());
 
   // HomePage: animation menu
-  return materialPageRoute(MyHomePage());
+  return materialPageRoute(Home());
 }
 
 MaterialPageRoute materialPageRoute(Widget screen) =>
