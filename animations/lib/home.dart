@@ -15,9 +15,20 @@ class Home extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            // -------------------------
+            // Hero ANIMATION
+            // -------------------------
             menuTitle('Hero Animation'),
             heroTile(RouteNames.h_animation,
                 title: 'Hero Animation', tag: hero_tag),
+
+            // -------------------------
+            // Staggered ANIMATION
+            // -------------------------
+            menuTitle('Staggered Animations'),
+            menuTile(RouteNames.s_animation,
+                title: 'Staggered Animations',
+                subtitle: 'Interval and TweenSquences mix'),
 
             // -------------------------
             // Implicit ANIMATION

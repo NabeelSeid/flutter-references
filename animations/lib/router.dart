@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:animations/home.dart';
 import 'package:animations/hero_animation.dart';
+import 'package:animations/staggered_animations/mixed_staggered_animation.dart';
 import 'package:animations/implicit_animations/implicit_animations.dart';
 import 'package:animations/explicit_animations/explicit_animations.dart';
 import 'package:animations/custom_explicit_animation/custom_explicit_animation.dart';
@@ -12,6 +13,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
   //__________________________Hero Animation______________________________
   if (routeName == RouteNames.h_animation)
     return materialPageRoute(HeroAnimation());
+
+  //__________________________Staggered Animation______________________________
+  if (routeName == RouteNames.s_animation)
+    return materialPageRoute(StaggeredAnimation());
 
   //__________________________Implicit Animation______________________________
   // AnimatedOpacity
@@ -40,6 +45,9 @@ MaterialPageRoute materialPageRoute(Widget screen) =>
 class RouteNames {
   // Hero Animations
   static const String h_animation = '/h_animation';
+
+  // Staggered Animations
+  static const String s_animation = '/s_animation';
 
   // Implicit Animations
   static const String i_animated_opacity = '/i_animated_opacity';

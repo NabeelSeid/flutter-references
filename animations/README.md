@@ -16,6 +16,23 @@ Flutter code based animation are clasiffied into two
 
 - Transition animation between screens. Not much digged here. To make animation smooth wrap child of Hero with a transparent Material widget
 
+### Staggered Animations
+
+- Staggered animation is a series of animation instead of animations all together. There are two ways to create staggered animations: Using [Intervals](https://api.flutter.dev/flutter/animation/Interval-class.html) and [TweenSequences](https://api.flutter.dev/flutter/animation/animation-library.html#staggered-animations-tweensequences)
+- `Intervals` give more controlle over the animation types and thier duration(delayed, overlaped, sequencial). To delay next animation start the next animation interval at a delayed time. `E.g [Interval(0.0, 0.2), Interval(0.4, 1.0)] This is not actual dart code, just for explanation`.
+- `TweenSquences` is a type of tween. It only animate a single type. Duration is expressed as weight. It does not allow animation overlapping since it only animate a single type. For delay effect use [ConstantTween](https://api.flutter.dev/flutter/animation/ConstantTween-class.html).
+
+> If there is no built-in tween for a type or making it tween generic do not work create Custom FooTween
+>
+>       Class FooTween Extend Tween<Foo> { 
+>           FooTween({Foo begin, Foo end})
+>           : super(begin: begin, end: end); 
+>
+>           /// Returns the value this variable has at the given animation clock value.
+>           @override
+>           Foo lerp(double t) => Foo.lerp(begin, end, t);
+>       }
+
 ## Implemented
 
 ---
