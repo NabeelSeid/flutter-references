@@ -22,16 +22,20 @@ Flutter code based animation are clasiffied into two
 - `Intervals` give more controlle over the animation types and thier duration(delayed, overlaped, sequencial). To delay next animation start the next animation interval at a delayed time. `E.g [Interval(0.0, 0.2), Interval(0.4, 1.0)] This is not actual dart code, just for explanation`.
 - `TweenSquences` is a type of tween. It only animate a single type. Duration is expressed as weight. It does not allow animation overlapping since it only animate a single type. For delay effect use [ConstantTween](https://api.flutter.dev/flutter/animation/ConstantTween-class.html).
 
+> ## Custom Tween
 > If there is no built-in tween for a type or making it tween generic do not work create Custom FooTween
 >
->       Class FooTween Extend Tween<Foo> { 
+>       Class FooTween Extend Tween<Foo> {
 >           FooTween({Foo begin, Foo end})
->           : super(begin: begin, end: end); 
+>           : super(begin: begin, end: end);
 >
 >           /// Returns the value this variable has at the given animation clock value.
 >           @override
 >           Foo lerp(double t) => Foo.lerp(begin, end, t);
 >       }
+
+> ## [Debuging](https://flutter.dev/docs/testing/code-debugging#debugging-animations)
+> Show down animation to debug it. Either set huge duration or set [timeDilation](https://api.flutter.dev/flutter/scheduler/timeDilation.html) to large number to slow down app's time consumption
 
 ## Implemented
 
