@@ -23,18 +23,22 @@ Flutter code based animation are clasiffied into two
 - `TweenSquences` is a type of tween. It only animate a single type. Duration is expressed as weight. It does not allow animation overlapping since it only animate a single type. For delay effect use [ConstantTween](https://api.flutter.dev/flutter/animation/ConstantTween-class.html).
 
 > ## Custom Tween
+>
 > If there is no built-in tween for a type or making it tween generic do not work create Custom FooTween
 >
->       Class FooTween Extend Tween<Foo> {
->           FooTween({Foo begin, Foo end})
->           : super(begin: begin, end: end);
+> ```dart
+> Class FooTween Extend Tween<Foo> {
+>   FooTween({Foo begin, Foo end}) : super(begin: begin, end: end);
 >
->           /// Returns the value this variable has at the given animation clock value.
->           @override
->           Foo lerp(double t) => Foo.lerp(begin, end, t);
->       }
+>    /// Returns the value this variable has at
+>    /// the given animation clock value.
+>    @override
+>    Foo lerp(double t) => Foo.lerp(begin, end, t);
+> }
+> ```
 
 > ## [Debuging](https://flutter.dev/docs/testing/code-debugging#debugging-animations)
+>
 > Show down animation to debug it. Either set huge duration or set [timeDilation](https://api.flutter.dev/flutter/scheduler/timeDilation.html) to large number to slow down app's time consumption
 
 ## Implemented
